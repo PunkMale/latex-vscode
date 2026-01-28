@@ -87,6 +87,15 @@ Compiled with xpdf version 4.04
             "args": [
                 "%DOCFILE%"
             ]
+        },
+        ,
+        {
+            "name": "cleanup",
+            "command": "/bin/bash",
+            "args": [
+              "-lc",
+              "shopt -s nullglob; rm -f *.aux *.bbl *.blg *.idx *.ind *.lof *.lot *.out *.toc *.acn *.acr *.alg *.glg *.glo *.gls *.ist *.fls *.log *.fdb_latexmk *.synctex.gz *.bcf *.run.xml *.nav *.snm *.vrb"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
@@ -120,7 +129,8 @@ Compiled with xpdf version 4.04
                 "xelatex",
                 "bibtex",
                 "xelatex",
-                "xelatex"
+                "xelatex",
+                "cleanup"
             ]
         },
         {
@@ -129,7 +139,8 @@ Compiled with xpdf version 4.04
                 "pdflatex",
                 "bibtex",
                 "pdflatex",
-                "pdflatex"
+                "pdflatex",
+                "cleanup"
             ]
         },
     ],
